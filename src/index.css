@@ -6,3 +6,14 @@
 .playwrite {
     font-family: "Playwrite HU", cursive;
 }
+
+.active{
+    background-color: indigo;
+}
+
+.navbarNew {
+    padding-left: 40;
+    padding-right: 40;
+    color: white;
+    border-radius: 32px;
+}

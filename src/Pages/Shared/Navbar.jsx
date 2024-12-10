@@ -1,19 +1,27 @@
 import { CgProfile } from "react-icons/cg";
-import { NavLink } from "react-router";
+import { Link, NavLink, useLocation } from "react-router";
 
 
-const Navbar = () => {
+const Navbar = ({ handleToggle, color }) => {
 
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/myCart">My Cart</NavLink></li>
         <li><NavLink to="/feedback">Feedback</NavLink></li>
-    </>
+    </>;
+
+    const location = useLocation();
+    console.log(location.pathname)
+
+    const login = ' className="btn border-none bg-gray-800 text-white clear-start ';
+
+    const navbar = 'navbar active px-10 mt-2  rounded-2xl';
+
     return (
-        <div className="navbar mt-2 px-10 bg-pink-500 text-white rounded-[32px]">
+        <div className={color ? 'bg-black navbar navbarNew border-white border-[1px]' : 'bg-pink-500 navbar navbarNew'}>
             <div className="navbar-start">
                 <div className="dropdown">
-                <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         Quick Sopping
                     </div>
                     <ul
@@ -30,7 +38,11 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn border-none bg-gray-800 text-white clear-start ">Log in <CgProfile className="text-xl"></CgProfile></a>
+                <button onClick={() => handleToggle(!color)}>
+                    <input type="checkbox" className="toggle" defaultChecked />
+                </button>
+                <Link to="/login" className="btn bg-black text-white border-none mr-5" >Log in <CgProfile className="text-xl"></CgProfile></Link>
+
             </div>
         </div>
     );

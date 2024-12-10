@@ -3,7 +3,7 @@ import { MdArrowOutward } from "react-icons/md";
 
 const Banner = () => {
     return (
-        <div className="hero bg-blue-200 h-auto rounded-[32px]">
+        <div className="hero mt-10 bg-blue-200 h-auto rounded-[32px]">
             <div className="flex  pl-40 w-full items-center flex-col lg:flex-row-reverse">
                 <img
                     src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c7058d8677742ac8519ac3f009cdcf4_9366/Tiro_21_Track_Pants_Black_GH7305_21_model.jpg"
